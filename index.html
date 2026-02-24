@@ -15,7 +15,7 @@
         <header class="site-header">
             <button id="theme-toggle-button" aria-label="Toggle color mode">Dark Mode</button>
             <h1>Market Pulse</h1>
-            <p class="intro">오늘 시장을 한 화면에서 간단히 확인하는 요약 사이트입니다.</p>
+            <p class="intro">오늘 시장의 핵심만 빠르게 읽는 초간단 스냅샷 페이지</p>
             <nav class="site-nav" aria-label="Primary">
                 <a href="/">Home</a>
                 <a href="/market-brief/">Market Brief</a>
@@ -58,13 +58,19 @@
 
             <section class="content-section">
                 <h2>오늘의 체크 포인트</h2>
-                <ul>
-                    <li>미국 10년물과 달러 방향이 같은지 확인</li>
-                    <li>지수보다 섹터 확산(상승 종목 비율) 점검</li>
-                    <li>이벤트 발표 전후 30분 반응 분리해서 해석</li>
-                </ul>
-                <button id="refresh-summary" class="action-button" type="button">시장 코멘트 업데이트</button>
-                <p id="summary-status" class="status-text" aria-live="polite">대기 중</p>
+                <div class="checklist">
+                    <p>1. 미국 10년물과 달러 방향이 같은지 확인</p>
+                    <p>2. 지수보다 섹터 확산(상승 종목 비율) 점검</p>
+                    <p>3. 이벤트 발표 전후 30분 반응 분리해서 해석</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>실시간 코멘트</h2>
+                <div class="status-box">
+                    <p id="summary-status" class="status-text" aria-live="polite">대기 중</p>
+                    <button id="refresh-summary" class="action-button" type="button">코멘트 새로고침</button>
+                </div>
             </section>
         </main>
 

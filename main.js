@@ -14,7 +14,9 @@ const getPreferredTheme = () => {
 
 const applyTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
-    themeToggleButton.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    if (themeToggleButton) {
+        themeToggleButton.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
 };
 
 const toggleTheme = () => {
@@ -38,12 +40,18 @@ const updateSummary = () => {
 
 applyTheme(getPreferredTheme());
 
-themeToggleButton.addEventListener('click', () => {
-    toggleTheme();
-});
+if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', () => {
+        toggleTheme();
+    });
+}
 
-summaryButton.addEventListener('click', () => {
+if (summaryButton) {
+    summaryButton.addEventListener('click', () => {
+        updateSummary();
+    });
+}
+
+if (summaryStatus) {
     updateSummary();
-});
-
-updateSummary();
+}
