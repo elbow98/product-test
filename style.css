@@ -57,11 +57,72 @@ body {
 
 h1 {
     color: var(--text-color);
+    margin-top: 0;
+}
+
+h2 {
+    margin: 0 0 0.6rem;
+}
+
+.intro {
+    margin: 0 0 1rem;
+    color: var(--muted-text);
+    line-height: 1.5;
+}
+
+.muted {
+    color: var(--muted-text);
+}
+
+.site-header {
+    margin-bottom: 1.25rem;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 0.8rem 0 0;
+}
+
+.site-nav a {
+    color: var(--button-bg);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    text-align: left;
+}
+
+.content-section {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.content-section p,
+.content-section li {
+    line-height: 1.6;
+}
+
+.site-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--field-border);
+    text-align: left;
+    color: var(--muted-text);
+    font-size: 0.9rem;
 }
 
 .numbers-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 10px;
     margin: 2em 0;
 }
@@ -114,6 +175,11 @@ h1 {
 .comments-section {
     margin-top: 2rem;
     text-align: left;
+}
+
+ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.2rem;
 }
 
 .comments-section h2 {

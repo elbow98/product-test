@@ -4,17 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-3230390928051839">
-    <title>Lotto Number Generator</title>
+    <meta name="description" content="로또 번호 생성 원리, 사용 방법, 확률적 한계를 설명하는 정보형 페이지입니다.">
+    <title>Lotto Number Guide | Number Generator</title>
     <link rel="stylesheet" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3230390928051839"
         crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <button id="theme-toggle-button" aria-label="Toggle color mode">Dark Mode</button>
-        <h1>Lotto Number Generator</h1>
-        <div id="numbers-container" class="numbers-container"></div>
-        <button id="generate-button">Generate Numbers</button>
+        <header class="site-header">
+            <button id="theme-toggle-button" aria-label="Toggle color mode">Dark Mode</button>
+            <h1>Lotto Number Guide</h1>
+            <p class="intro">
+                이 사이트는 로또 번호 생성 도구와 함께, 번호 선택 방식과 한계를 이해할 수 있도록 설명하는 정보형 콘텐츠를 제공합니다.
+            </p>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Quick Generator</h2>
+                <p class="muted">무작위 번호 6개를 생성합니다. 생성 결과는 확률을 보장하지 않습니다.</p>
+                <div id="numbers-container" class="numbers-container"></div>
+                <button id="generate-button">Generate Numbers</button>
+            </section>
+
+            <section class="content-section">
+                <h2>How This Works</h2>
+                <p>
+                    생성기는 1부터 45까지의 숫자 중 중복 없이 6개를 뽑고 오름차순으로 정렬합니다.
+                    과거 당첨번호를 학습하거나 예측 모델을 사용하지 않으며, 각 조합은 동일한 확률을 가집니다.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>Practical Tips</h2>
+                <ul>
+                    <li>예산을 먼저 정하고 그 범위 안에서만 이용하세요.</li>
+                    <li>번호 선택 도구는 재미와 편의를 위한 참고 수단으로 사용하세요.</li>
+                    <li>결과 기록을 남겨 패턴이 아닌 소비 습관을 점검하세요.</li>
+                </ul>
+            </section>
+        </main>
+
         <section class="affiliate-section">
             <h2>Partnership Inquiry</h2>
             <form id="affiliate-form" class="affiliate-form">
@@ -42,6 +80,10 @@
                 <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
             </noscript>
         </section>
+        <footer class="site-footer">
+            <p>Contact: support@example.com</p>
+            <p>Last updated: 2026-02-24</p>
+        </footer>
     </div>
     <script src="main.js"></script>
     <script>
