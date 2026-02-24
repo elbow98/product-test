@@ -31,7 +31,24 @@
                 <p id="affiliate-status" aria-live="polite"></p>
             </form>
         </section>
+        <section class="comments-section" aria-label="Comments">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+        </section>
     </div>
     <script src="main.js"></script>
+    <script>
+        (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://test-x2lwiauxzw.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 </body>
 </html>

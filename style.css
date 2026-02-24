@@ -111,6 +111,17 @@ h1 {
     text-align: left;
 }
 
+.comments-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.comments-section h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
 .affiliate-section h2 {
     margin: 0 0 0.8rem;
     font-size: 1.2rem;
