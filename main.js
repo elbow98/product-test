@@ -1,13 +1,8 @@
-
-const generateButton = document.getElementById('generate-button');
-const numbersContainer = document.getElementById('numbers-container');
 const themeToggleButton = document.getElementById('theme-toggle-button');
-const affiliateForm = document.getElementById('affiliate-form');
-const affiliateSubmit = document.getElementById('affiliate-submit');
-const affiliateStatus = document.getElementById('affiliate-status');
+const summaryButton = document.getElementById('refresh-summary');
+const summaryStatus = document.getElementById('summary-status');
 
 const THEME_KEY = 'theme';
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeelpbpk';
 
 const getPreferredTheme = () => {
     const savedTheme = localStorage.getItem(THEME_KEY);
@@ -29,64 +24,26 @@ const toggleTheme = () => {
     localStorage.setItem(THEME_KEY, nextTheme);
 };
 
-applyTheme(getPreferredTheme());
+const comments = [
+    '금리와 달러가 같은 방향으로 움직이면 성장주 변동성이 커질 수 있습니다.',
+    '지수 상승 시에도 상승 종목 비율이 낮으면 체감 강도는 약할 수 있습니다.',
+    '이벤트 직후 반응보다 30~90분 후 재평가 흐름이 더 중요할 때가 많습니다.'
+];
 
-generateButton.addEventListener('click', () => {
-    generateAndDisplayNumbers();
-});
+const updateSummary = () => {
+    const now = new Date();
+    const pick = now.getMinutes() % comments.length;
+    summaryStatus.textContent = `${comments[pick]} (${now.toLocaleTimeString('ko-KR')})`;
+};
+
+applyTheme(getPreferredTheme());
 
 themeToggleButton.addEventListener('click', () => {
     toggleTheme();
 });
 
-affiliateForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    affiliateSubmit.disabled = true;
-    affiliateStatus.className = '';
-    affiliateStatus.textContent = 'Sending inquiry...';
-
-    const formData = new FormData(affiliateForm);
-
-    try {
-        const response = await fetch(FORMSPREE_ENDPOINT, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                Accept: 'application/json'
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Request failed');
-        }
-
-        affiliateForm.reset();
-        affiliateStatus.className = 'success';
-        affiliateStatus.textContent = 'Inquiry sent successfully.';
-    } catch (error) {
-        affiliateStatus.className = 'error';
-        affiliateStatus.textContent = 'Failed to send. Please try again.';
-    } finally {
-        affiliateSubmit.disabled = false;
-    }
+summaryButton.addEventListener('click', () => {
+    updateSummary();
 });
 
-function generateAndDisplayNumbers() {
-    numbersContainer.innerHTML = '';
-    const lottoNumbers = generateLottoNumbers();
-    lottoNumbers.forEach(number => {
-        const numberElement = document.createElement('div');
-        numberElement.classList.add('number');
-        numberElement.textContent = number;
-        numbersContainer.appendChild(numberElement);
-    });
-}
-
-function generateLottoNumbers() {
-    const numbers = new Set();
-    while (numbers.size < 6) {
-        const randomNumber = Math.floor(Math.random() * 45) + 1;
-        numbers.add(randomNumber);
-    }
-    return Array.from(numbers).sort((a, b) => a - b);
-}
+updateSummary();

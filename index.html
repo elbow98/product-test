@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-3230390928051839">
-    <meta name="description" content="로또 번호 생성 원리, 사용 방법, 확률적 한계를 설명하는 정보형 페이지입니다.">
-    <title>Lotto Number Guide | Number Generator</title>
+    <meta name="description" content="하루 시장 흐름을 빠르게 확인하는 주식시장 요약 페이지입니다.">
+    <title>Market Pulse | Simple Stock Snapshot</title>
     <link rel="stylesheet" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3230390928051839"
         crossorigin="anonymous"></script>
@@ -14,81 +14,60 @@
     <div class="container">
         <header class="site-header">
             <button id="theme-toggle-button" aria-label="Toggle color mode">Dark Mode</button>
-            <h1>Lotto Number Guide</h1>
-            <p class="intro">
-                이 사이트는 로또 번호 생성 도구와 함께, 번호 선택 방식과 한계를 이해할 수 있도록 설명하는 정보형 콘텐츠를 제공합니다.
-            </p>
+            <h1>Market Pulse</h1>
+            <p class="intro">오늘 시장을 한 화면에서 간단히 확인하는 요약 사이트입니다.</p>
             <nav class="site-nav" aria-label="Primary">
                 <a href="/">Home</a>
+                <a href="/market-brief/">Market Brief</a>
+                <a href="/macro-calendar/">Macro Calendar</a>
+                <a href="/glossary/">Glossary</a>
                 <a href="/about/">About</a>
-                <a href="/privacy-policy/">Privacy</a>
-                <a href="/terms/">Terms</a>
-                <a href="/contact/">Contact</a>
             </nav>
         </header>
 
         <main>
-            <section>
-                <h2>Quick Generator</h2>
-                <p class="muted">무작위 번호 6개를 생성합니다. 생성 결과는 확률을 보장하지 않습니다.</p>
-                <div id="numbers-container" class="numbers-container"></div>
-                <button id="generate-button">Generate Numbers</button>
-            </section>
-
             <section class="content-section">
-                <h2>How This Works</h2>
-                <p>
-                    생성기는 1부터 45까지의 숫자 중 중복 없이 6개를 뽑고 오름차순으로 정렬합니다.
-                    과거 당첨번호를 학습하거나 예측 모델을 사용하지 않으며, 각 조합은 동일한 확률을 가집니다.
-                </p>
-            </section>
-
-            <section class="content-section">
-                <h2>Practical Tips</h2>
-                <ul>
-                    <li>예산을 먼저 정하고 그 범위 안에서만 이용하세요.</li>
-                    <li>번호 선택 도구는 재미와 편의를 위한 참고 수단으로 사용하세요.</li>
-                    <li>결과 기록을 남겨 패턴이 아닌 소비 습관을 점검하세요.</li>
-                </ul>
-            </section>
-
-            <section class="content-section">
-                <h2>Market Content</h2>
-                <div class="content-buttons" aria-label="Market content shortcuts">
-                    <a class="content-button" href="/market-brief/">일일 시장 브리프</a>
-                    <a class="content-button" href="/macro-calendar/">주간 매크로 캘린더</a>
-                    <a class="content-button" href="/glossary/">주식/매크로 용어 20</a>
+                <h2>오늘의 시장 스냅샷</h2>
+                <div class="snapshot-grid">
+                    <article class="snapshot-card">
+                        <p class="label">금리 환경</p>
+                        <p class="value">중립</p>
+                        <p class="hint">실질금리와 달러 강도 동시 확인</p>
+                    </article>
+                    <article class="snapshot-card">
+                        <p class="label">리스크 선호</p>
+                        <p class="value">보통</p>
+                        <p class="hint">성장/가치 순환 체크</p>
+                    </article>
+                    <article class="snapshot-card">
+                        <p class="label">변동성 체감</p>
+                        <p class="value">주의</p>
+                        <p class="hint">이벤트 전후 변동성 확대 가능</p>
+                    </article>
                 </div>
+            </section>
+
+            <section class="content-section">
+                <h2>빠른 이동</h2>
+                <div class="content-buttons" aria-label="Market content shortcuts">
+                    <a class="content-button" href="/market-brief/">일일 시장 브리프 보기</a>
+                    <a class="content-button" href="/macro-calendar/">주간 매크로 캘린더 보기</a>
+                    <a class="content-button" href="/glossary/">주식/매크로 용어 20 보기</a>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>오늘의 체크 포인트</h2>
+                <ul>
+                    <li>미국 10년물과 달러 방향이 같은지 확인</li>
+                    <li>지수보다 섹터 확산(상승 종목 비율) 점검</li>
+                    <li>이벤트 발표 전후 30분 반응 분리해서 해석</li>
+                </ul>
+                <button id="refresh-summary" class="action-button" type="button">시장 코멘트 업데이트</button>
+                <p id="summary-status" class="status-text" aria-live="polite">대기 중</p>
             </section>
         </main>
 
-        <section class="affiliate-section">
-            <h2>Partnership Inquiry</h2>
-            <form id="affiliate-form" class="affiliate-form">
-                <label for="partner-name">Name</label>
-                <input id="partner-name" name="name" type="text" required>
-
-                <label for="partner-email">Email</label>
-                <input id="partner-email" name="email" type="email" required>
-
-                <label for="partner-company">Company</label>
-                <input id="partner-company" name="company" type="text" required>
-
-                <label for="partner-message">Proposal</label>
-                <textarea id="partner-message" name="message" rows="4" required></textarea>
-
-                <button id="affiliate-submit" type="submit">Send Inquiry</button>
-                <p id="affiliate-status" aria-live="polite"></p>
-            </form>
-        </section>
-        <section class="comments-section" aria-label="Comments">
-            <h2>Comments</h2>
-            <div id="disqus_thread"></div>
-            <noscript>
-                Please enable JavaScript to view the
-                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-            </noscript>
-        </section>
         <footer class="site-footer">
             <p>Contact: support@example.com</p>
             <p>Last updated: 2026-02-24</p>
@@ -105,14 +84,5 @@
         </footer>
     </div>
     <script src="main.js"></script>
-    <script>
-        (function() {
-            var d = document;
-            var s = d.createElement('script');
-            s.src = 'https://test-x2lwiauxzw.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
 </body>
 </html>
