@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Nasdaq Market News",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Markets"
+  },
+  {
+    "name": "Nasdaq Investing",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Investing"
+  }
+]
