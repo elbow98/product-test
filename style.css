@@ -8,6 +8,11 @@
     --button-hover-bg: #0056b3;
     --theme-toggle-bg: #111111;
     --theme-toggle-text: #ffffff;
+    --field-bg: #ffffff;
+    --field-border: #d9d9e3;
+    --muted-text: #666666;
+    --success-text: #1f8b4c;
+    --error-text: #c0392b;
 }
 
 [data-theme="dark"] {
@@ -20,6 +25,11 @@
     --button-hover-bg: #1f63cc;
     --theme-toggle-bg: #f2f2f5;
     --theme-toggle-text: #111111;
+    --field-bg: #222534;
+    --field-border: #3a3f56;
+    --muted-text: #b5b8c9;
+    --success-text: #65d08a;
+    --error-text: #ff8f87;
 }
 
 body {
@@ -27,8 +37,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 24px 12px;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.25s ease, color 0.25s ease;
@@ -41,6 +52,7 @@ body {
     box-shadow: 0 4px 12px var(--shadow-color);
     text-align: center;
     transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    width: min(760px, 100%);
 }
 
 h1 {
@@ -92,4 +104,70 @@ h1 {
     cursor: pointer;
     font-size: 0.9em;
     margin-bottom: 12px;
+}
+
+.affiliate-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.affiliate-section h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.affiliate-form {
+    display: grid;
+    gap: 10px;
+}
+
+.affiliate-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.affiliate-form input,
+.affiliate-form textarea {
+    width: 100%;
+    border: 1px solid var(--field-border);
+    border-radius: 6px;
+    background: var(--field-bg);
+    color: var(--text-color);
+    padding: 10px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.affiliate-form textarea {
+    resize: vertical;
+}
+
+#affiliate-submit {
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#affiliate-submit:hover {
+    background: var(--button-hover-bg);
+}
+
+#affiliate-status {
+    min-height: 1.2em;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+}
+
+#affiliate-status.success {
+    color: var(--success-text);
+}
+
+#affiliate-status.error {
+    color: var(--error-text);
 }
