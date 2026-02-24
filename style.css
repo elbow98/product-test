@@ -119,6 +119,22 @@ main {
     font-size: 0.9rem;
 }
 
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.footer-nav a {
+    color: var(--button-bg);
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
 .numbers-container {
     display: flex;
     justify-content: flex-start;
